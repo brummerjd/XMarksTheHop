@@ -63,16 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
         mLocationEditText = (EditText) findViewById(R.id.et_location);
 
-        mSearchButton = (Button) findViewById(R.id.b_search);
-        mSearchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                hideSoftKeyboard();
-
-                mLocationText = mLocationEditText.getText().toString();
-                new SearchGoogleMaps().execute();
-            }
-        });
+        // TODO #2 Set up mSearchButton by finding its view, then hooking up a new OnClickListener
+        //  which will hide the keyboard, set mLocationText to the text the user has entered in
+        //  mLocationEditText, and finally start a Google Maps search thread with the command
+        //  'new SearchGoogleMaps().execute();'
+        mSearchButton = null;
 
         mBreweriesList = (ListView) findViewById(R.id.lv_breweries);
         mBreweriesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -159,9 +154,14 @@ public class MainActivity extends AppCompatActivity {
                 JSONArray breweries = object.getJSONArray("results");
                 for (int i = 0; i < breweries.length(); i++) {
                     JSONObject brewery = breweries.getJSONObject(i);
-                    String name = brewery.getString("name");
-                    String address = brewery.getString("formatted_address");
-                    Boolean open = brewery.getJSONObject("opening_hours").getBoolean("open_now");
+
+                    // TODO #4 Get the name, address, and whether the bar is open from JSON data
+                    //  Hint: Try a Postman call using QUERY_MAPS, replacing the '%s%' in QUERY_MAPS
+                    //  with something like 'brewery+manhattan+ks' to see how the JSON data is
+                    //  organized
+                    String name = "Clever Brewery Name";    // Dummy data until fixed
+                    String address = "8334 Drunk Dr";       // Dummy data until fixed
+                    Boolean open = true;                    // Dummy data until fixed
                     mCatalog.addBrewery(new Brewery(name, address, open));
                 }
                 onActivityResult(BREWERIES_OBTAINED, -1, null);

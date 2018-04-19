@@ -22,7 +22,12 @@ public class Brewery {
 
     public String getID() { return mID; }
     public String getAddress() { return mAddress; }
-    public String getOpen() { return String.format("%s now", (mOpen ? "Open" : "Closed")); }
+    public String getOpen() {
+        if (mOpen != null) {
+            return String.format("%s now", (mOpen ? "Open" : "Closed"));
+        }
+        return "";
+        }
     public String getName() { return mName; }
     public String getImageURL() {return mLogoSource;}
     public String getWebsiteURL() {return mWebsiteURL;}

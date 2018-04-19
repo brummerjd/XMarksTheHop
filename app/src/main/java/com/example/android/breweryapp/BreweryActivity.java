@@ -41,11 +41,13 @@ public class BreweryActivity extends AppCompatActivity {
         mName.setText(mBrewery.getName());
 
         mLogo = (ImageView) header.findViewById(R.id.brewery_logo);
+
         Picasso.with(this).setLoggingEnabled(true);
-        Picasso.with(this)
-                .load(mBrewery.getImageURL())
-                .placeholder(R.mipmap.ic_launcher)
-                .into(mLogo);
+        // TODO #5 Use Picasso to load the brewery image URL
+        //  Hint: you will need to do something like 'Picasso.with(this)._____._____._____;'. The
+        //  first blank will tell what image URL to LOAD, the second blank should set
+        //  'R.mipmap.ic_launcher' as a PLACEHOLDER, and the third blank should indicate what
+        //  ImageView resource everything should be put INTO
 
         mDescription = (TextView) header.findViewById(R.id.brewery_description);
         mDescription.setText(mBrewery.getDescription());

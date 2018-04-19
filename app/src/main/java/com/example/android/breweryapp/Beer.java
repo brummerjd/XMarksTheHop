@@ -17,13 +17,13 @@ public class Beer {
         mID = ID;
     }
 
-
-    public String getName() {return mName;}
-    public String getImageURL() {return mImageURL;}
-    public String getABV() {return mABV;}
-    public String getDescription() {return mDescription;}
-    public String getStyle() {return mStyle;}
-    public String getID() {return mID;}
+    // TODO #3 Get all of our getters getting right
+    public String getName() {return "Magic Sauce";}
+    public String getImageURL() {return "";}
+    public String getABV() {return "";}
+    public String getDescription() {return "It's like, malty, and there's hops and stuff";}
+    public String getStyle() {return "Uhhh, it's beer";}
+    public String getID() {return "";}
 
     @Override
     public String toString() {
